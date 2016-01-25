@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}Главная{% endblock title %}
+
+
+{% block nav_class_index %}selected{% endblock nav_class_index %}
+
+
+{% block nav_potolok %}
+                    <ul>{% for ceiling in ceilings %}
+                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        {% endfor %}
+      				</ul>
+{% endblock nav_potolok %}
+
+
+{% block content %}
+
+<div id="tooplate_header_wrapper">
+	<div id="tooplate_header">
+    
+    	<div id="site_title"><h1><a href="#">Натяжные потолки ОРФИ</a></h1></div>
+        
+        <div id="slider_wrapper">
+            <ul class="slider horizontal" >
+                <li id="slide_1"><img src="{% static 'images/slider/01.jpg' %}" alt="Slider 1" /></li>
+                <li id="slide_2"><img src="{% static 'images/slider/02.jpg' %}" alt="Slider 2" /></li>
+                <li id="slide_3"><img src="{% static 'images/slider/03.jpg' %}" alt="Slider 3" /></li>
+                <li id="slide_4"><img src="{% static 'images/slider/04.jpg' %}" alt="Slider 4" /></li>
+                <li id="slide_5"><img src="{% static 'images/slider/05.jpg' %}" alt="Slider 5" /></li>
+            </ul>
+		</div>
+    </div> <!-- end of header -->
+</div> <!-- end of header wrapper -->
+
+<div id="tooplate_main_wrapper">
+	<div id="tooplate_main">
+    	<div id="content_top">
+            <div class="post col_2 no_bottom float_l">
+                <h2><a href="#">ВЫЗОВ ТЕХНОЛОГА</a></h2>
+                <div class="meta no_background"><strong>Мы знаем все о натяжных потолках.</strong></div>
+                
+                <div class="solo"><span></span><a href="#"><img src="{% static 'images/zamer.png' %}" alt="Image 01" /></a></div>
+                <p>Монтаж натяжного потолка рекомендуется выполнять на завершающем этапе ремонтных работ. Данный вид отделки потолка занимает от 3х часов до нескольких дней в зависиости от конфигурации и сложности дизайна.</p>
+                <a href="#" class="more float_r">Подробнее</a>
+                <div class="cleaner"></div>
+            </div>
+            <div class="post col_2 no_bottom float_r">
+                <h2><a href="#">КАЛЬКУЛЯТОР</a></h2>
+                <div class="meta no_background"><strong>Рассчитать стоимость натяжного потолка можно уже сейчас!</strong></div>
+                
+                <div class="solo"><span></span><a href="#"><img src="{% static 'images/kalculator.png' %}" alt="Image 02" /></a></div>
+                <p>Но помните, что этот просчет будет предварителен. Т.к. каждый потолок индивидуален и зависит от многих факторов - размеров помещения, выбранных материалов, геометрии потолка, осветительных приборов и т.д. Поэтому более точная стоимость натяжного потолка может быть определена только технологом после осмотра и замера помещения.</p>
+                <a href="#" class="more float_r">Подробнее</a>
+                <div class="cleaner"></div>
+            </div>
+            <div class="cleaner"></div>
+        </div>
+        
+		<div id="content">
+                
+            <div class="col_3">
+                <h3>New Services</h3>
+                <ul class="tooplate_list">
+                	<li>Augue felis pharetra felis</li>
+                    <li>Donec eget est eu velit</li>
+                    <li>Curabitur vehicula arcu at </li>
+                    <li>Felis pharetra felis sed</li>
+                    <li>Integer placerat dolor vel</li>
+                    <li>Tortor mi in massa donec</li>
+                    <li>Vestibulum bibendum urna</li>
+                </ul>
+            </div>
+            <div class="col_3 no_margin_right">
+                <h3>Testimonials</h3>
+                <p class="testimonial">Proin metus mi, fringilla sit amet consequat vel, vulputate leo.</p>
+                <cite>Ronald <a href="#"><span>- SEO Specialist</span></a></cite>    
+                <div class="cleaner h40"></div>
+                <p class="testimonial">Suspendisse nec orci vel justo varius dictum sed sed metus.</p>
+                <cite>Booker <a href="#"><span>- Web Designer</span></a></cite>    
+			</div>
+            <div class="cleaner"></div>
+        </div>
+        <div id="sidebar">
+                           
+            <h3>Featured Project</h3>
+			<div class="image_frame"><span></span><img src="images/tooplate_image_09.png" alt="Image 09" /></div>
+            <em>Maecenas consequat faucibus eros, rhoncus gravida nulla rhoncus at.</em>
+        </div> <!-- end of sidebar -->
+{% endblock content %}
