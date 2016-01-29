@@ -12,7 +12,6 @@ class CeilingAdmin(admin.ModelAdmin):
 	list_display = ['name']
 	inlines = [DetalnoeOpisanieInline]
     
-    
       
 admin.site.register(Ceiling, CeilingAdmin)
 

@@ -20,42 +20,15 @@
 
 {% block content %}
 
-<div id="tooplate_header_wrapper">
-	<div id="tooplate_header">
-    	
-    	<div id="site_title"><h1><a href="#">Leather Shop Template</a></h1></div>
-        
-    </div> <!-- end of header -->
-</div> <!-- end of header wrapper -->
+
 
 <div id="tooplate_main_wrapper">
 	<div id="tooplate_main">
 		<div id="content">
         	
-            <h2>Contact Information</h2>
-                <p>Duis eget felis quis sem vehicula egestas eu ac justo. Mauris porta urna eget tortor dapibus eu sollicitudin ligula lacinia. Nam sit amet lorem diam. Validate <a href="http://validator.w3.org/check?uri=referer" rel="nofollow"><strong>XHTML</strong></a> and <a href="http://jigsaw.w3.org/css-validator/check/referer" rel="nofollow"><strong>CSS</strong></a>.</p>
-                <div id="contact_form">
-                   <form method="post" name="contact" action="#"> 
-
-                            <label for="author">Name:</label> <input type="text" id="author" name="author" class="required input_field" />
-                            <div class="cleaner h10"></div>
-                                                        
-                            <label for="email">Email:</label> <input type="text" id="email" name="email" class="validate-email required input_field" />
-                            <div class="cleaner h10"></div>
-                                                
-                            <label for="subject">Subject:</label> <input type="text" class="validate-subject required input_field" name="subject" id="subject"/>				               
-                            <div class="cleaner h10"></div>
-                                
-                            <label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0" class="required"></textarea>
-                            <div class="cleaner h10"></div>				
-                                                    
-                            <input type="submit" value="Send" id="submit" name="submit" class="submit_btn float_l" />
-                            <input type="reset" value="Reset" id="reset" name="reset" class="submit_btn float_r" />
-                            
- 					</form>
-                    
-					<div class="cleaner h10"></div>
-                </div>
+            <h2>Наши Контакты</h2>
+                <p>Получите удовольствие и комфорт от покупки. Основным отличием нашей компании является - индивидуальный подход к каждому клиенту.</p>
+               
                 
                 <div class="col_3 float_l">
                 
@@ -63,35 +36,29 @@
                     
                 </div>
                 <div class="col_3 float_r no_margin_right">
-                	<h4>Mailing Address</h4>
-                	<h6><strong>Leather Shop</strong></h6>
-                	880-440 Quisque ut metus sapien, <br />
-                    Mauris et sapien eu elit, 18440<br />
-                    Vestibulum a imperdiet<br /><br />
-                    
-                    <strong>Phone:</strong> 080-040-0440<br />
-                    <strong>Email:</strong> <a href="mailto:info@company.com">info@company.com</a> 
-                    
+                	<h4>Телефоны</h4>
+                	<h6><strong>Специалист отдела продаж: Александра</strong></h6></br>                   
+                    <strong>Life:</strong> (063) 291-41-67</br></br>
+                    <strong>Life:</strong> (063) 831-72-29<br /></br>
+                    <strong>MTC:</strong> (050) 225-61-03<br /></br>
+                    <strong>Phone:</strong> (057) 771-45-20<br /></br>
+                    <strong>Email:</strong> <a href="mailto:orfi@gmail.com">orfi@gmail.com</a>                     
                 </div>
             <div class="cleaner"></div>
         </div>
         <div id="sidebar">
-
-            <h3>Our Latest Work</h3>
-            <div class="image_frame"><span></span><img src="images/tooplate_image_09.png" alt="Image 09" /></div>
-            <em>Maecenas consequat faucibus eros, rhoncus gravida nulla rhoncus at. </em>
 			<div class="cleaner h40"></div>
-            <h3>Flickr Stream</h3>
+            <em><h3>Возможные идеи для вашего дома</h3></em>
             <ul class="flickr_stream">
-                <li><a href="#"><img src="images/tooplate_image_08.png" alt="Flickr 08" /></a></li>
-                <li><a href="#"><img src="images/tooplate_image_03.png" alt="Flickr 03" /></a></li>
-                <li class="no_margin_right"><a href="#"><img src="images/tooplate_image_04.png" alt="Flickr 04" /></a></li>
-                <li><a href="#"><img src="images/tooplate_image_05.png" alt="Flickr 05" /></a></li>
-                <li><a href="#"><img src="images/tooplate_image_06.png" alt="Flickr 06" /></a></li>
-                <li class="no_margin_right"><a href="#"><img src="images/tooplate_image_07.png" alt="Flickr 07" /></a></li>
-                <li><a href="#"><img src="images/tooplate_image_04.png" alt="Flickr 04" /></a></li>
-                <li><a href="#"><img src="images/tooplate_image_08.png" alt="Flickr 08" /></a></li>
-                <li class="no_margin_right"><a href="#"><img src="images/tooplate_image_03.png" alt="Flickr 03" /></a></li>
+                <li><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/1.jpg' %}" width="75" height="75" alt="Flickr 01" /></a></li>
+                <li><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/2.jpg' %}" width="75" height="75" alt="Flickr 02" /></a></li>
+                <li class="no_margin_right"><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/3.png' %}" width="75" height="75" alt="Flickr 03" /></a></li>
+                <li><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/4.jpg' %}" width="75" height="75" alt="Flickr 04" /></a></li>
+                <li><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/5.jpg' %}" width="75" height="75" alt="Flickr 05" /></a></li>
+                <li class="no_margin_right"><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/6.jpg' %}" width="75" height="75" alt="Flickr 06" /></a></li>
+                <li><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/7.jpg' %}" width="75" height="75" alt="Flickr 07" /></a></li>
+                <li><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/8.jpg' %}" width="75" height="75" alt="Flickr 08" /></a></li>
+                <li class="no_margin_right"><a href="{% url 'gallery:gallery' %}"><img src="{% static 'images/9.jpg' %}" width="75" height="75" alt="Flickr 09" /></a></li>
             </ul>
         </div> <!-- end of sidebar -->
 {% endblock content %}

@@ -238,15 +238,16 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 	padding: 0; 
 	margin: 0 auto; 
 	display: block; 
-	width: 350px; 
-	height: 82px; 
+	width: 168px; 
+	height: 130px; 
 	text-indent: -10000px; 
-	background:  url(../images/cooltext160986214483997.png) no-repeat center left; 
+	background:  url(../images/cooltext162195298679890.png) no-repeat center left; 
 }
 
 #logo_top {
-	float: left; 
-	margin: 0 -125px -125px 0;
+	position: relative;
+    left: 110px; 
+	margin: 0 -135px -135px 0;
 	padding: 8px;
 }
 
@@ -254,8 +255,8 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
   width: 600px;
   height: 100px;
   position: relative;
-  left: 350px;
-  padding: 15px;
+  left: 600px;
+  padding: 10px;
 }
 
 #slider_wrapper {

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" class="no-js">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Вызов Технолога</title>
+<link type="image/png" rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<link href="{% static 'css/tooplate_style.css' %}" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/ddsmoothmenu.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/lightbox.css' %}" />
+
+<script type="text/javascript" src="{% static 'js/jquery-1.4.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/highlight.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/ddsmoothmenu.js' %}">
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "tooplate_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+<script type="text/javascript">
+	$().ready(function() {
+		$('.slider').kwicks({
+			max : 740,
+			spacing : 1
+		});
+	});
+</script>
+</head>
+
+<body>
+
+<div id="liniya">
+<div id="logo_top"><span></span><a href="{% url 'index' %}" ><img src="{% static 'images/Cool-Text-160987126323701.png' %}" width="322" height="125" /></a></div>
+<div class="customhead_tel">
+            <table border="0" style="width: 553px;">
+                <tbody>
+                    <tr>
+                        <td style="width: 228px;">
+                            <h4><p style="text-align: left;">
+                                <span style="color:#dd4528;"><span>(057)</span></span><span style="color:#2E2E2E;"> 771-45-20</span></p></h4>
+                            <h4><p style="text-align: left;">
+                                <span style="color:#dd4528;">(063)</span><span style="color:#2E2E2E;"> 291-41-67</span></p></h4>
+                        </td>
+                        <td style="width: 309px;">
+                            <h4><p style="text-align: right;">
+                                <span style="color:#dd4528;">(063)</span>&nbsp;<span style="color:#2E2E2E;">831-72-28</span></p></h4>
+                            <h4><p style="text-align: right;">
+                                <span style="color:#dd4528;">(099)</span><span style="color:#2E2E2E;"> 225-61-03</span></p></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width: 543px; text-align: center;">
+                            <span style="font-family:arial,helvetica,sans-serif;font-variant: small-caps;"><span style="font-size:24px;"><span style="color:#dd4528;">Адрес: </span><span style="color:#2E2E2E;">г.Харьков, ул.Пушкинаская 14</span></span>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                &nbsp;</p>
+        </div>
+        </div>
+        </div>
+<div id="tooplate_top_wrapper">
+	<div id="tooplate_top">
+    	<div id="tooplate_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="{% url 'index' %}" class="{% block nav_class_index %}{% endblock nav_class_index %}"><span></span>ГЛАВНАЯ</a></li>
+                <li><a href="{% url 'gallery:gallery' %}" class="{% block nav_class_gallery %}{% endblock nav_class_gallery %}"><span></span>ГАЛЕРЕЯ</a></li>
+                <li><a href="#"><span></span>О ПОТОЛКАХ</a>
+                {% block nav_potolok %}{% endblock nav_potolok %}</li>
+              <li><a href="blog.html"><span></span>РАСЧЕТ СТОИМОСТИ</a>
+              		<ul>
+                        <li><a href="#">ПРАЙС-ЛИСТ</a></li>
+                        <li><a href="#">КАЛЬКУЛЯТОР ЦЕН</a></li>			
+                    </ul>
+              </li>
+              <li><a href="{% url 'contact' %}" class="{% block nav_class_contact %}{% endblock nav_class_contact %}"><span></span>КОНТАКТЫ</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of menu -->
+    </div> <!-- end of top -->
+</div> <!-- end of top wrapper -->
+
+	<div id="page-wrap">
+	<h3><center>Вызов технолога</center></h3></br>
+	<p>* обязательные поля</p>
+		<form id="myform" method="post">
+			{% csrf_token %}
+			<div>
+			<div class="field">
+			{{ form.name.errors }}
+				<label for="{{ form.name.id_for_label }}" >* Ваше Имя</label>
+				<input class="inputfield textfield" {{ form.name }} 
+			</div>
+			<div class="field">
+				
+				{{ form.phone.errors }}
+				<label for="{{ form.phone.id_for_label }}" >* Ваш Номер</label>
+				<input class="inputfield textfield" {{ form.phone }} 
+			</div>
+			
+			<div class="field area">
+				<label for="{{ form.message.id_for_label }}" >Сообщение</label>
+				<textarea class="inputfield textarea1" {{ form.message }} </textarea>
+			</div>
+			</div>
+			<!--div class="clear"></div-->
+			<input class="submitbutton" type="submit" value="Submit" />
+
+		</form>
+	</div>
+
+</body>
+
+</html>
