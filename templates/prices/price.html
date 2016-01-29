@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}ПРАЙС-ЛИСТ{% endblock title %}
+
+
+{% block nav_potolok %}
+                    <ul>{% for ceiling in ceilings %}
+                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        {% endfor %}
+      				</ul>
+{% endblock nav_potolok %}
+
+
+{% block content %}
+
+<div id="site_title"><h1><a href="{% url 'index' %}">Натяжные потолки ОРФИ</a></h1></div></br>
+{% for price in price_one %}
+{% if price.name %}
+<div><h2><em><center>{{ price.name }}</center></em></h2></div>
+{% endif %}
+{% endfor %}
+<div class="price_table" >
+                <table> 
+                {% for price in price_one %}           
+                    <tr>
+                        <td id="cool1">
+                             {{ price.first_field }}
+                        </td>
+                        <td id="cool2">
+                            {{ price.second_field }}
+                        </td>
+                        <td>
+                            {{ price.third_field }}
+                        </td>
+                        <td>
+                            {{ price.fourth_field }}
+                        </td>
+                        <td>
+                            {{ price.fifth_field }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td id="cool1">
+                             Звездное небо
+                        </td>
+                        <td id="cool3" colspan="4">
+                            Стоимость зависит от выбора и количества светильников
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="cool1">
+                              Фотопечать
+(возможна глянцевая, матовая и сатиновая поверхность)
+                        </td>
+                        <td id="cool3" colspan="4">
+                            Стоимость зависит от выбора фактуры и размера
+                        </td>
+                    </tr>                                                       
+                </table>
+            </div>
+            <div class="cleaner h40"></div>
+            
+{% for price in fields_two %}
+{% if price.name %}
+<div><h2><em><center>{{ price.name }}</center></em></h2></div>
+{% endif %}
+{% endfor %}
+<div class="price_table" >
+                <table> 
+                {% for price in fields_two %}           
+                    <tr>
+                        <td id="cool1">
+                             {{ price.first_field }}
+                        </td>
+                        <td id="cool2">
+                            {{ price.second_field }}
+                        </td>
+                        <td>
+                            {{ price.third_field }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td id="cool1">
+                             Центровка шва
+                        </td>
+                        <td id="cool3" colspan="2">
+                            +10% от стоимости полотна
+                        </td>
+                    </tr>                                                       
+                </table>
+            </div>
+            <div class="cleaner h40"></div>
+
+
+{% endblock content %}

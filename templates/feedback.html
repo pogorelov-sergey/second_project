@@ -89,11 +89,15 @@ ddsmoothmenu.init({
                 <li><a href="{% url 'index' %}" class="{% block nav_class_index %}{% endblock nav_class_index %}"><span></span>ГЛАВНАЯ</a></li>
                 <li><a href="{% url 'gallery:gallery' %}" class="{% block nav_class_gallery %}{% endblock nav_class_gallery %}"><span></span>ГАЛЕРЕЯ</a></li>
                 <li><a href="#"><span></span>О ПОТОЛКАХ</a>
-                {% block nav_potolok %}{% endblock nav_potolok %}</li>
-              <li><a href="blog.html"><span></span>РАСЧЕТ СТОИМОСТИ</a>
+                <ul>{% for ceiling in ceilings %}
+                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        {% endfor %}
+      				</ul>
+                </li>
+              <li><a href="#"><span></span>РАСЧЕТ СТОИМОСТИ</a>
               		<ul>
-                        <li><a href="#">ПРАЙС-ЛИСТ</a></li>
-                        <li><a href="#">КАЛЬКУЛЯТОР ЦЕН</a></li>			
+                        <li><a href="{% url 'prices:price' %}">ПРАЙС-ЛИСТ</a></li>
+                        <li><a href="{% url 'calculator:calculator' %}">КАЛЬКУЛЯТОР ЦЕН</a></li>			
                     </ul>
               </li>
               <li><a href="{% url 'contact' %}" class="{% block nav_class_contact %}{% endblock nav_class_contact %}"><span></span>КОНТАКТЫ</a></li>

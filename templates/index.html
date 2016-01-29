@@ -4,7 +4,7 @@
 {% load staticfiles %}
 
 
-{% block title %}{{ home.0 }}{% endblock title %}
+{% block title %}{% for item in home %}{{item.title}}{% endfor %}{% endblock title %}
 
 
 {% block nav_class_index %}selected{% endblock nav_class_index %}
@@ -53,8 +53,8 @@
                 <div class="cleaner"></div>
             </div>
             <div class="post col_2 no_bottom float_r">
-                <h2><a href="#">КАЛЬКУЛЯТОР</a></h2></br>               
-                <div class="solo"><span></span><a href="#"><img src="{% static 'images/kalculator.png' %}" alt="Image 02" /></a></div>
+                <h2><a href="{% url 'calculator:calculator' %}">КАЛЬКУЛЯТОР</a></h2></br>               
+                <div class="solo"><span></span><a href="{% url 'calculator:calculator' %}"><img src="{% static 'images/kalculator.png' %}" alt="Image 02" /></a></div>
                 <p>Но помните, что этот просчет будет предварителен. Т.к. каждый потолок индивидуален и зависит от многих факторов - размеров помещения, выбранных материалов, геометрии потолка, осветительных приборов и т.д. Поэтому более точная стоимость натяжного потолка может быть определена только технологом после осмотра и замера помещения.</p>
                 <div class="cleaner"></div>
             </div>

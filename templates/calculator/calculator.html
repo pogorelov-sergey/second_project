@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}{% for item in contents %}{{item.title}}{% endfor %}{% endblock title %}
+
+
+{% block nav_potolok %}
+                    <ul>{% for ceiling in ceilings %}
+                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        {% endfor %}
+      				</ul>
+{% endblock nav_potolok %}
+
+
+{% block content %}
+
+
+<div id="tooplate_main_wrapper">
+	<div id="tooplate_main">
+		<div id="content">
+        	{% for text in contents %}
+            <h3>{{ text.name }}</h3>
+           	<p>{{ text.content }}</p>
+           	{% if text.phone %}
+			</br><h4>Вызвать <a href="{% url 'feedback' %}">технолога</a> можно по тел.: {{ text.phone}}</h4>
+			{% endif %}
+            {% endfor %}
+            <div class="cleaner h40"></div>
+            
+            
+            <form method="post">{% csrf_token %}
+		  {{ form.as_p }}
+		  <input type="submit" value="Решить" />
+		</form>
+
+{% if d or d == 0 %}
+<p>Дискриминант: {{ d }}</p>
+{% if d < 0 %}<p><strong>Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.</strong></p>
+{% elif d == 0 %}<p><strong>Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = {{ x1 }}</strong></p>
+{% else %}<p><strong>Квадратное уравнение имеет два действительных корня: x1 = {{ x1 }}, x2 = {{ x2 }}</strong></p>
+{% endif %}
+{% endif %}
+            
+            
+	</div>
+    </div> <!-- end of main -->
+</div> <!-- end of main wrapper -->
+{% endblock content %}

@@ -12,6 +12,8 @@ urlpatterns = patterns('',
 	url(r'^feedback/$', FeedbackView.as_view(), name='feedback'),
 	url(r'^contact/$', views.ContactView.as_view(), name='contact'),
 	url(r'^ceilings/', include('ceilings.urls', namespace="ceilings")),
+	url(r'^prices/', include('prices.urls', namespace="prices")),
+	url(r'^calculator/', include('calculator.urls', namespace="calculator")),
 	url(r'^gallery/', include('gallery.urls', namespace="gallery")),
     url(r'^admin/', include(admin.site.urls)),
 )
