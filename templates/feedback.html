@@ -115,18 +115,17 @@ ddsmoothmenu.init({
 			<div>
 			<div class="field">
 			{{ form.name.errors }}
-				<label for="{{ form.name.id_for_label }}" >* Ваше Имя</label>
+				<label for="{{ id_name }}" >* Ваше Имя</label>
 				<input class="inputfield textfield" {{ form.name }} 
 			</div>
-			<div class="field">
-				
+			<div class="field">				
 				{{ form.phone.errors }}
-				<label for="{{ form.phone.id_for_label }}" >* Ваш Номер</label>
+				<label for="{{ id_phone }}" >* Ваш Номер</label>
 				<input class="inputfield textfield" {{ form.phone }} 
 			</div>
 			
 			<div class="field area">
-				<label for="{{ form.message.id_for_label }}" >Сообщение</label>
+				<label for="{{ id_message }}" >Сообщение</label>
 				<textarea class="inputfield textarea1" {{ form.message }} </textarea>
 			</div>
 			</div>

@@ -15,5 +15,13 @@ class FeedbackForm(forms.ModelForm):
 			raise forms.ValidationError("Введите пожалуйста правильный номер")
 		return phone
 		
+	def clean_name(self):
+		name = self.cleaned_data['name']
+		if name.isdigit():
+			raise forms.ValidationError("Введите пожалуйста ваше имя")
+		elif len(name) < 2:
+			raise forms.ValidationError("Введите пожалуйста ваше имя")
+		return name
+		
 		
 

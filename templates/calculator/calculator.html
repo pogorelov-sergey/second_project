@@ -23,29 +23,24 @@
 		<div id="content">
         	{% for text in contents %}
             <h3>{{ text.name }}</h3>
-           	<p>{{ text.content }}</p>
-           	{% if text.phone %}
-			</br><h4>Вызвать <a href="{% url 'feedback' %}">технолога</a> можно по тел.: {{ text.phone}}</h4>
+            {% if text.phone %}
+			<h4>Вызвать <a href="{% url 'feedback' %}"><em>технолога</em></a> можно по тел.: {{ text.phone}}</h4></br>
 			{% endif %}
+           	<p>{{ text.content }}</p>      	
             {% endfor %}
             <div class="cleaner h40"></div>
             
             
-            <form method="post">{% csrf_token %}
-		  {{ form.as_p }}
-		  <input type="submit" value="Решить" />
-		</form>
 
-{% if d or d == 0 %}
-<p>Дискриминант: {{ d }}</p>
-{% if d < 0 %}<p><strong>Дискриминант меньше нуля, квадратное уравнение не имеет действительных решений.</strong></p>
-{% elif d == 0 %}<p><strong>Дискриминант равен нулю, квадратное уравнение имеет один действительный корень: x1 = x2 = {{ x1 }}</strong></p>
-{% else %}<p><strong>Квадратное уравнение имеет два действительных корня: x1 = {{ x1 }}, x2 = {{ x2 }}</strong></p>
-{% endif %}
-{% endif %}
+
             
             
 	</div>
     </div> <!-- end of main -->
 </div> <!-- end of main wrapper -->
+<p>Стоимость составляет {{ result|default:"0" }} грн.</p>
+            <form method="post">{% csrf_token %}
+		  {{ form.as_p }}
+		  <input type="submit" value="Решить" />
+		</form>
 {% endblock content %}

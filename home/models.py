@@ -16,8 +16,8 @@ class Slider(models.Model):
 	
 	
 class Feedback(models.Model):
-    name = models.CharField(max_length=255, verbose_name='Имя')
-    phone = models.CharField(max_length=15, verbose_name='Номер телефона')
+    name = models.CharField(blank=True, max_length=255, verbose_name='Имя')
+    phone = models.CharField(blank=True, max_length=15, verbose_name='Номер телефона')
     message = models.TextField(blank=True, verbose_name='Сообщение')
     create_date = models.DateTimeField(auto_now_add=True)
     
