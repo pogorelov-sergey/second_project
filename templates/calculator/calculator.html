@@ -19,8 +19,8 @@
 
 
 <div id="tooplate_main_wrapper">
-	<div id="tooplate_main">
-		<div id="content">
+	<div id="tooplate_main_2">
+		<div id="content_2">
         	{% for text in contents %}
             <h3>{{ text.name }}</h3>
             {% if text.phone %}
@@ -28,19 +28,50 @@
 			{% endif %}
            	<p>{{ text.content }}</p>      	
             {% endfor %}
-            <div class="cleaner h40"></div>
-            
-            
-
-
-            
-            
+            <div class="cleaner h40"></div>           
 	</div>
     </div> <!-- end of main -->
 </div> <!-- end of main wrapper -->
-<p>Стоимость составляет {{ result|default:"0" }} грн.</p>
-            <form method="post">{% csrf_token %}
-		  {{ form.as_p }}
-		  <input type="submit" value="Решить" />
+<div id="content_3">
+	{% if result %}
+	<div id="price"><p>Стоимость составляет <span style="color:#00ff00;">{{ result }}</span> грн.</p></div>
+	{% endif %}
+		<form id="myform" method="post">
+			{% csrf_token %}
+			<div>
+			<div class="field">
+			{{ form.material }}
+			</div>
+			<div class="field">				
+				<label for="{{ id_area }}" >Укажите Вашу площадь (м.кв.)</label>
+				<input id="id_area" class="inputfield textfield" name="area" type="number" {{form.area}} 
+			</div>		
+			<div class="field">				
+				<label for="{{ id_angles }}" >Введите количество углов (всех)</label>
+				<input id="id_angles" class="inputfield textfield" name="angles" type="number" {{form.angles}} 
+			</div>
+			<div class="field">				
+				<label for="{{ id_lamp }}" >Количество точечных светильников (шт.)</label>
+				<input id="id_lamp" class="inputfield textfield" name="lamp" type="number" {{form.lamp}} 
+			</div>
+			<div class="field">				
+				<label for="{{ id_chandelier }}" >Установка люстры (шт.)</label>
+				<input id="id_chandelier" class="inputfield textfield" name="chandelier" type="number" {{form.chandelier}} 
+			</div>
+			<div class="field">				
+				<label for="{{ id_trumpet }}" >Обход трубы (шт.)</label>
+				<input id="id_trumpet" class="inputfield textfield" name="trumpet" type="number" {{form.trumpet}} 
+			</div>
+			<div class="field">				
+				<label for="{{ id_baguette }}" >Багет "вставка" (п.м.)</label>
+				<input id="id_baguette" class="inputfield textfield" name="baguette" type="number" {{form.baguette}} 
+			</div>
+			</div>
+			<!--div class="clear"></div-->
+			<input class="submitbutton" type="submit" value="Рассчитать" />
 		</form>
+		
+	</div>
+<div class="cleaner h40"></div> 
+
 {% endblock content %}

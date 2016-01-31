@@ -35,7 +35,7 @@ class CalculatorForm(forms.Form):
 	chandelier = forms.IntegerField(required=False, label="Установка люстры")
 	trumpet = forms.IntegerField(required=False, label="Обход трубы")
 	baguette = forms.IntegerField(required=False, label="Багет (вставка)")
-	
+'''	
 	def clean_area(self):
 		area = self.cleaned_data['area']
 		c = str(area)
@@ -77,6 +77,6 @@ class CalculatorForm(forms.Form):
 		if c[0] == '-':
 			raise forms.ValidationError("Введите пожалуйста положительное число! ")
 		return baguette	
-
+'''
 	
 
