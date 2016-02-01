@@ -9,14 +9,20 @@ textarea, input{ outline:none;}
 body{
 	background:black;
 }
-#page-wrap{
+#page-wrap{	
 	width:350px;
 	min-height:500px;
 	height:auto;
 	margin:0 auto;
 	position:relative;
-	padding-top:50px;
 	font:15px Arial;
+}
+#kartinka{
+  width: 300px;
+  height: 20px;
+  position: relative;
+  left: 850px;
+  padding: 10px;
 }
 
 #myform{

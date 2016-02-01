@@ -57,21 +57,21 @@ ddsmoothmenu.init({
                 <tbody>
                     <tr>
                         <td style="width: 228px;">
-                            <h4><p style="text-align: left;">
+                            <h4><p style="text-align: center;">
                                 <span style="color:#dd4528;"><span>(057)</span></span><span style="color:#2E2E2E;"> 771-45-20</span></p></h4>
-                            <h4><p style="text-align: left;">
+                            <h4><p style="text-align: center;">
                                 <span style="color:#dd4528;">(063)</span><span style="color:#2E2E2E;"> 291-41-67</span></p></h4>
                         </td>
                         <td style="width: 309px;">
-                            <h4><p style="text-align: right;">
+                            <h4><p style="text-align: center;">
                                 <span style="color:#dd4528;">(063)</span>&nbsp;<span style="color:#2E2E2E;">831-72-28</span></p></h4>
-                            <h4><p style="text-align: right;">
+                            <h4><p style="text-align: center;">
                                 <span style="color:#dd4528;">(099)</span><span style="color:#2E2E2E;"> 225-61-03</span></p></h4>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" style="width: 543px; text-align: center;">
-                            <span style="font-family:arial,helvetica,sans-serif;font-variant: small-caps;"><span style="font-size:24px;"><span style="color:#dd4528;">Адрес: </span><span style="color:#2E2E2E;">г.Харьков, ул.Пушкинаская 14</span></span>
+                            <span style="font-family:arial,helvetica,sans-serif;font-variant: small-caps;"><span style="font-size:24px;"><span style="color:#dd4528;">Email: </span><span style="color:#2E2E2E;">orfi@gmail.com</span></span>
                             </span>
                         </td>
                     </tr>
@@ -106,20 +106,25 @@ ddsmoothmenu.init({
         </div> <!-- end of menu -->
     </div> <!-- end of top -->
 </div> <!-- end of top wrapper -->
-
+<div id="kartinka"><img src="{% static 'images/0_9ef7b_1bcdd104_L.png' %}" /></div>
 	<div id="page-wrap">
 	<h3><center>Вызов технолога</center></h3></br>
 	<p>* обязательные поля</p>
+	{% if form.errors %}
+        <p style="color: red;">
+            Заполните пожалуйста правильно поля!
+            {{ form.name.errors }}
+            {{ form.phone.errors }}
+        </p>
+    {% endif %}
 		<form id="myform" method="post">
 			{% csrf_token %}
 			<div>
 			<div class="field">
-			{{ form.name.errors }}
 				<label for="{{ id_name }}" >* Ваше Имя</label>
 				<input class="inputfield textfield" {{ form.name }} 
 			</div>
 			<div class="field">				
-				{{ form.phone.errors }}
 				<label for="{{ id_phone }}" >* Ваш Номер</label>
 				<input class="inputfield textfield" {{ form.phone }} 
 			</div>
@@ -130,7 +135,7 @@ ddsmoothmenu.init({
 			</div>
 			</div>
 			<!--div class="clear"></div-->
-			<input class="submitbutton" type="submit" value="Submit" />
+			<input class="submitbutton" type="submit" value="Отправить" />
 
 		</form>
 	</div>

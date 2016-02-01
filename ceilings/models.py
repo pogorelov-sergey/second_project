@@ -12,7 +12,7 @@ class Ceiling(models.Model):
 		
 class DetalnoeOpisanie(models.Model):
 	name = models.CharField(u'Название', max_length=255, blank=True, null=True)
-	short_description = models.CharField(u'Краткое описание', max_length=500, blank=True, null=True)
+	short_description = models.TextField(u'Краткое описание', blank=True, null=True)
 	description = models.TextField(u'Полное описание', blank=True, null=True)
 	image = models.ImageField(blank=True, upload_to='images/', verbose_name='Ссылка картинки')
 	ceiling = models.ForeignKey(Ceiling)

@@ -159,7 +159,7 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
 	background: url(../images/tooplate_main.png) repeat-x top;
 }
 #liniya {
-	background: url(../images/tooplate_main.png) repeat-x top;
+	background: url(../images/tooplate_header_bg.png) repeat;
 }
 
 #tooplate_main {
@@ -927,7 +927,7 @@ ul.grid li a {
 }
 /*****************END***PRICE-TABLE*****************************/
 
-#myform{
+#myform_2{
 	width:400px;
 	-moz-border-radius: 8px; /* FF1+ */
   	-webkit-border-radius: 8px; /* Saf3+, Chrome */
@@ -935,14 +935,14 @@ ul.grid li a {
 	margin:0 auto;
 	position:relative;
 }
-#myform label{
+#myform_2 label{
 	top:5px;
 	position:relative;
 	color:white;
 	font:15px Arial;
 	
 }
-.field{
+.field_2{
 	background:#756455;
 	padding:5px 15px 25px 15px;
 	height:10px;
@@ -970,7 +970,7 @@ ul.grid li a {
 	padding:15px 15px 0 10px;
 	min-height:195px;
 }
-.inputfield{
+.inputfield_2{
 	padding:0 0px 0 23px;
 	float:right;
 	width:30px;
@@ -982,7 +982,7 @@ ul.grid li a {
     border-radius: 8px; /* Opera 10.5, IE 9 */
 }
 
-.textfield{
+.textfield_2{
 	height:25px;
 	padding-top:0px;
 }
@@ -1023,7 +1023,7 @@ ul.grid li a {
 }
 /**************************************************************/
 
-.inputfield:focus{
+.inputfield_2:focus{
     -webkit-animation-name: pulsate;
 	-webkit-animation-duration: 1.5s;
 	-webkit-animation-iteration-count: infinite;
