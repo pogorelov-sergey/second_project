@@ -1039,3 +1039,11 @@ ul.grid li a {
 	color:black;
 	font:20px Arial;
 }
+
+#price_2 {
+	top:-20px;
+	left:35px;
+	position:relative;
+	color:black;
+	font:20px Arial;
+}
