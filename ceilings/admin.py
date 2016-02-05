@@ -10,6 +10,7 @@ class DetalnoeOpisanieInline(admin.TabularInline):
 class CeilingAdmin(admin.ModelAdmin):
 	search_fields = ['name']
 	list_display = ['name']
+	prepopulated_fields = {"slug": ("name",)}
 	inlines = [DetalnoeOpisanieInline]
     
       

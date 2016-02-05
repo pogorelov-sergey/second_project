@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from gallery.models import Gallery, Picture
 from django.views.generic.detail import DetailView
 from ceilings.models import Ceiling
+from django.shortcuts import render
 
 
 class GalleryView(TemplateView):
@@ -13,7 +14,14 @@ class GalleryView(TemplateView):
         context['ceilings'] = Ceiling.objects.all()
         return context
         
-       
+def detail(request, pk):
+	ceilings = Ceiling.objects.all()
+	pictures = Picture.objects.filter(gallery__slug=pk)
+	title = Gallery.objects.get(slug=pk)
+
+	return render(request, 'gallery/picture.html', {'pictures': pictures, 'ceilings': ceilings, 'title': title})
+        
+'''       
 class PictureDetailView(DetailView):
 	model = Gallery
 	template_name = 'gallery/picture.html'
@@ -23,3 +31,4 @@ class PictureDetailView(DetailView):
 		context['pictures'] = Picture.objects.filter(gallery = self.object)
 		context['ceilings'] = Ceiling.objects.all()
 		return context
+'''

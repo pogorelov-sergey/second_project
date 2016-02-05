@@ -12,7 +12,7 @@
 
 {% block nav_potolok %}
                     <ul>{% for ceiling in ceilings %}
-                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        <li><a href="{% url 'ceilings:detail' ceiling.slug %}">{{ ceiling.name }}</a></li>
                         {% endfor %}
       				</ul>
 {% endblock nav_potolok %}

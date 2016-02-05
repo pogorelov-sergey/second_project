@@ -2,7 +2,6 @@
 from django.views.generic import TemplateView
 from ceilings.models import Ceiling
 from home.models import Home, Slider
-from home.forms import FeedbackForm
 
 
 class IndexView(TemplateView):

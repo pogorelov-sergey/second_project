@@ -10,6 +10,7 @@ class PictureInline(admin.TabularInline):
 class GalleryAdmin(admin.ModelAdmin):
 	search_fields = ['name']
 	list_display = ['name']
+	prepopulated_fields = {"slug": ("name",)}
 	inlines = [PictureInline]
     
     

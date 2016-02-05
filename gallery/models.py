@@ -6,6 +6,7 @@ class Gallery(models.Model):
 	name = models.CharField(verbose_name='Название раздела галереи.', max_length=255)
 	title = models.TextField()
 	image = models.ImageField(blank=True, upload_to='gallery/', help_text='Картинка которая в галерее.', verbose_name='Ссылка картинки')
+	slug = models.SlugField(max_length=100, verbose_name=u'URL категории', unique=True, help_text='Введите URL без "/" и пробелов.')
 	
 	def __unicode__(self):
 		return self.name

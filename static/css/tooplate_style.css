@@ -254,15 +254,15 @@ h6 { font-size: 12px; margin: 0 0 5px; padding: 0; }
   width: 400px;
   height: 10px;
   position: relative;
-  left: 800px;
+  left: 120px;
   padding: 10px;
 }
 
 .customhead_tel{
-  width: 900px;
-  height: 100px;
   position: relative;
-  left: 60px;
+  width: 500px;
+  height: 100px;
+  right: -650px;
   padding: 3px;
 }
 
@@ -1046,4 +1046,59 @@ ul.grid li a {
 	position:relative;
 	color:black;
 	font:20px Arial;
+}
+
+
+img.myclass{
+    -moz-transition: all 1s ease-out;
+	-o-transition: all 1s ease-out;
+	-webkit-transition: all 1s ease-out;
+	-webkit-transform-origin:center !important;
+	-moz-transform-origin:center !important;
+	-ms-transform-origin:center !important;
+	-o-transform-origin:center !important;
+	transform-origin:center !important;
+
+}
+img.myclass:hover {
+     -webkit-transform: scale(1.1)  translate(-30px);
+     -moz-transform: scale(1.1)  translate(-30px);
+     -o-transform: scale(1.1)  translate(-30px);
+    transform: scale(1.1)  translate(-30px);
+}
+
+img.myclass_2{
+    -moz-transition: all 1s ease-out;
+	-o-transition: all 1s ease-out;
+	-webkit-transition: all 1s ease-out;
+	-webkit-transform-origin:center !important;
+	-moz-transform-origin:center !important;
+	-ms-transform-origin:center !important;
+	-o-transform-origin:center !important;
+	transform-origin:center !important;
+
+}
+img.myclass_2:hover {
+     -webkit-transform: scale(1.1)  translate(-30px);
+     -moz-transform: scale(1.1)  translate(-30px);
+     -o-transform: scale(1.1)  translate(-30px);
+    transform: scale(1.1)  translate(-30px);
+}
+
+img.myclass_3{
+    -moz-transition: all 1s ease-out;
+	-o-transition: all 1s ease-out;
+	-webkit-transition: all 1s ease-out;
+	-webkit-transform-origin:center !important;
+	-moz-transform-origin:center !important;
+	-ms-transform-origin:center !important;
+	-o-transform-origin:center !important;
+	transform-origin:center !important;
+
+}
+img.myclass_3:hover {
+     -webkit-transform: scale(1.1)  translate(-30px);
+     -moz-transform: scale(1.1)  translate(-30px);
+     -o-transform: scale(1.1)  translate(-30px);
+    transform: scale(1.1)  translate(-30px);
 }

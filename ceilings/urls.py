@@ -3,5 +3,5 @@ from ceilings import views
 
 
 urlpatterns = patterns('',
-    url(r'^(?P<pk>\d+)/$', views.CeilingDetailView.as_view(), name='detail'),
+    url(r'^(?P<pk>\w+)/$', views.detail, name='detail'),
 )

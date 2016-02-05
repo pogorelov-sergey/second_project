@@ -12,7 +12,7 @@
 
 {% block nav_potolok %}
                     <ul>{% for ceiling in ceilings %}
-                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        <li><a href="{% url 'ceilings:detail' ceiling.slug %}">{{ ceiling.name }}</a></li>
                         {% endfor %}
       				</ul>
 {% endblock nav_potolok %}
@@ -48,13 +48,13 @@
     	<div id="content_top">
             <div class="post col_2 no_bottom float_l">
                 <h2><a href="{% url 'feedback' %}">ВЫЗОВ ТЕХНОЛОГА</a></h2></br>
-                <div class="solo"><span></span><a href="{% url 'feedback' %}"><img src="{% static 'images/zamer.png' %}" alt="Image 01" /></a></div>
+                <div class="solo"><span></span><a href="{% url 'feedback' %}"><img class="myclass" src="{% static 'images/zamer.png' %}" alt="Image 01" /></a></div>
                 <p>Монтаж натяжного потолка рекомендуется выполнять на завершающем этапе ремонтных работ. Данный вид отделки потолка занимает от 3х часов до нескольких дней в зависиости от конфигурации и сложности дизайна.</p>
                 <div class="cleaner"></div>
             </div>
             <div class="post col_2 no_bottom float_r">
                 <h2><a href="{% url 'calculator:calculator' %}">КАЛЬКУЛЯТОР</a></h2></br>               
-                <div class="solo"><span></span><a href="{% url 'calculator:calculator' %}"><img src="{% static 'images/kalculator.png' %}" alt="Image 02" /></a></div>
+                <div class="solo"><span></span><a href="{% url 'calculator:calculator' %}"><img class="myclass_2" src="{% static 'images/kalculator.png' %}" alt="Image 02" /></a></div>
                 <p>Но помните, что этот просчет будет предварителен. Т.к. каждый потолок индивидуален и зависит от многих факторов - размеров помещения, выбранных материалов, геометрии потолка, осветительных приборов и т.д. Поэтому более точная стоимость натяжного потолка может быть определена только технологом после осмотра и замера помещения.</p>
                 <div class="cleaner"></div>
             </div>
@@ -84,6 +84,6 @@
         <div id="sidebar">
                            
             <em><h3>Как к нам проехать</h3></em>
-			<div class="solo"><span></span><a href="{% url 'contact' %}"><img src="{% static 'images/1_2851.png' %}" width="256" height="152" alt="Map" /></a></div>
+			<div class="solo"><span></span><a href="{% url 'contact' %}"><img class="myclass_3" src="{% static 'images/1_2851.png' %}" width="256" height="152" alt="Map" /></a></div>
         </div> <!-- end of sidebar -->
 {% endblock content %}

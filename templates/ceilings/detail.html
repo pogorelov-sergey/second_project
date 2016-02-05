@@ -4,12 +4,12 @@
 {% load staticfiles %}
 
 
-{% block title %}{{ ceiling.title }}{% endblock title %}
+{% block title %}{{ title.title }}{% endblock title %}
 
 
 {% block nav_potolok %}
                     <ul>{% for ceiling in ceilings %}
-                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        <li><a href="{% url 'ceilings:detail' ceiling.slug %}">{{ ceiling.name }}</a></li>
                         {% endfor %}
       				</ul>
 {% endblock nav_potolok %}
@@ -44,7 +44,6 @@
         	{% endif %}
             {% endfor %}
             <div class="cleaner h40"></div>
-            
             
 	</div>
     </div> <!-- end of main -->

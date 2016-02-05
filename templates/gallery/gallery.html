@@ -12,7 +12,7 @@
 
 {% block nav_potolok %}
                     <ul>{% for ceiling in ceilings %}
-                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        <li><a href="{% url 'ceilings:detail' ceiling.slug %}">{{ ceiling.name }}</a></li>
                         {% endfor %}
       				</ul>
 {% endblock nav_potolok %}
@@ -25,8 +25,8 @@
 		<ul class="grid">
 			{% for gallery in gallerys %}
             <div class="gallery_box no_margin_right">
-            	<a href="{% url 'gallery:picture' gallery.id %}" ><h4><strong>{{ gallery.name }}</strong></h4></a>
-                <div id="portfolio_1" class="image_frame image_fl"><span></span><a href="{% url 'gallery:picture' gallery.id %}" ><img src="{{ gallery.image.url }}" width="250" height="250" /></a></div>
+            	<a href="{% url 'gallery:picture' gallery.slug %}" ><h4><strong>{{ gallery.name }}</strong></h4></a>
+                <div id="portfolio_1" class="image_frame image_fl"><span></span><a href="{% url 'gallery:picture' gallery.slug %}" ><img src="{{ gallery.image.url }}" width="250" height="250" /></a></div>
 			</div>
             {% endfor %}
             </ul>

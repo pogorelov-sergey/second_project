@@ -90,7 +90,7 @@ ddsmoothmenu.init({
                 <li><a href="{% url 'gallery:gallery' %}" class="{% block nav_class_gallery %}{% endblock nav_class_gallery %}"><span></span>ГАЛЕРЕЯ</a></li>
                 <li><a href="#"><span></span>О ПОТОЛКАХ</a>
                 <ul>{% for ceiling in ceilings %}
-                        <li><a href="{% url 'ceilings:detail' ceiling.id %}">{{ ceiling.name }}</a></li>
+                        <li><a href="{% url 'ceilings:detail' ceiling.slug %}">{{ ceiling.name }}</a></li>
                         {% endfor %}
       				</ul>
                 </li>
