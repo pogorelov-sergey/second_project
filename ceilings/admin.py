@@ -2,7 +2,7 @@ from django.contrib import admin
 from ceilings.models import Ceiling, DetalnoeOpisanie
 
 
-class DetalnoeOpisanieInline(admin.TabularInline):
+class DetalnoeOpisanieInline(admin.StackedInline):
 	model = DetalnoeOpisanie
 	extra = 0
 

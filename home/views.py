@@ -5,6 +5,7 @@ from ceilings.models import Ceiling
 from home.forms import FeedbackForm
 from django.core.urlresolvers import reverse_lazy
 from django.contrib import messages
+from django.core.mail import mail_admins
 
 
 class FeedbackView(CreateView):
@@ -19,8 +20,10 @@ class FeedbackView(CreateView):
         return context
     
     def form_valid(self, form):
-		messages.success(self.request, 'Ваша заявка успешно отправлена!')
-		return super(FeedbackView, self).form_valid(form)
+    	feedback = form.save()
+    	messages.success(self.request, 'Ваша заявка успешно отправлена!')
+    	#mail_admins(feedback.phone, feedback.message, feedback.name)
+    	return super(FeedbackView, self).form_valid(form)
 		
 	
     

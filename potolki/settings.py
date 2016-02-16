@@ -104,3 +104,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_files/')
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'), )
+
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_HOST_USER = "spogorelov29@gmail.com"
+#EMAIL_HOST_PASSWORD = "wrong123456789"
+#EMAIL_USE_TLS = True
+#ADMINS = (('admin', 'sergey.pogorelov.1989@gmail.com'), )
